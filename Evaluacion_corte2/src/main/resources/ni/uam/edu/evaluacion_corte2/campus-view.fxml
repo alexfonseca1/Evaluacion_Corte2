@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ni.uam.edu.evaluacion_corte2.controller.CampusController">
+
+    <children>
+
+        <Label layoutX="14.0" layoutY="14.0" text="Gestión de papelería">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="14.0" layoutY="55.0" text="Código:" />
+        <Label layoutX="14.0" layoutY="89.0" text="Nombre:" />
+        <Label layoutX="14.0" layoutY="129.0" text="Categoría:" />
+
+        <Label layoutX="240.0" layoutY="55.0" text="Precio:" />
+        <Label layoutX="242.0" layoutY="89.0" text="Stock:" />
+
+        <TextField fx:id="txtCodigo" layoutX="77.0" layoutY="51.0" prefWidth="150.0" promptText="P001" />
+
+        <TextField fx:id="txtNombre" layoutX="77.0" layoutY="85.0" prefWidth="150.0" promptText="Nombre del producto" />
+
+        <ComboBox fx:id="cmbCategoria" editable="false" layoutX="77.0" layoutY="125.0" prefWidth="150.0" promptText="Seleccione" />
+
+        <TextField fx:id="txtPrecio" layoutX="300.0" layoutY="51.0" prefWidth="150.0" promptText="65.00" />
+
+        <TextField fx:id="txtStock" layoutX="300.0" layoutY="85.0" prefWidth="150.0" promptText="0" />
+
+        <Button fx:id="btnNuevo" layoutX="15.0" layoutY="163.0" mnemonicParsing="false" onAction="#limpiarFormulario" text="Nuevo" />
+
+        <Button fx:id="btnGuardar" layoutX="78.0" layoutY="163.0" mnemonicParsing="false" onAction="#guardarProducto" text="Guardar" />
+
+        <Button fx:id="btnActualizar" layoutX="151.0" layoutY="163.0" mnemonicParsing="false" onAction="#actualizarProducto" text="Actualizar" />
+
+        <Button fx:id="btnEliminar" layoutX="229.0" layoutY="163.0" mnemonicParsing="false" onAction="#eliminarProducto" text="Eliminar" />
+
+        <Separator layoutX="8.0" layoutY="199.0" prefWidth="584.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" />
+        
+        <Label layoutX="14.0" layoutY="207.0" text="Búsqueda y filtros">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="14.0" layoutY="238.0" text="Código o nombre:" />
+
+        <TextField fx:id="txtBuscar" layoutX="125.0" layoutY="234.0" onAction="#buscarProductos" prefWidth="150.0" promptText="Buscar..." />
+
+        <Label layoutX="301.0" layoutY="238.0" text="Categoría:" />
+
+        <ComboBox fx:id="cmbFiltroCategoria" editable="false" layoutX="375.0" layoutY="234.0" prefWidth="150.0" promptText="Todas" />
+
+        <CheckBox fx:id="chkSoloExistencias" layoutX="18.0" layoutY="271.0" mnemonicParsing="false" text="Solo con existencias" />
+
+        <Button fx:id="btnBuscar" layoutX="15.0" layoutY="303.0" mnemonicParsing="false" onAction="#buscarProductos" text="Buscar" />
+
+        <Button fx:id="btnLimpiarFiltros" layoutX="73.0" layoutY="303.0" mnemonicParsing="false" onAction="#limpiarFiltros" text="Limpiar filtros" />
+
+        <Button fx:id="btnRecargar" layoutX="168.0" layoutY="303.0" mnemonicParsing="false" onAction="#recargarProductos" text="Recargar" />
+
+        <!-- TABLA DE PRODUCTOS -->
+
+        <TableView fx:id="tblProductos" editable="false" layoutX="13.0" layoutY="340.0" prefHeight="320.0" prefWidth="574.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="340.0">
+
+            <columns>
+
+                <TableColumn fx:id="colId" prefWidth="62.60000419616699" text="ID" />
+
+                <TableColumn fx:id="colCodigo" prefWidth="75.60002136230469" text="Código" />
+
+                <TableColumn fx:id="colNombre" prefWidth="168.39998626708984" text="Nombre" />
+
+                <TableColumn fx:id="colCategoria" prefWidth="100.0" text="Categoría" />
+
+                <TableColumn fx:id="colPrecio" prefWidth="90.0" text="Precio " />
+
+                <TableColumn fx:id="colStock" prefWidth="60.0" text="Stock" />
+
+            </columns>
+
+            <placeholder>
+                <Label text="Sin productos para mostrar" />
+            </placeholder>
+
+        </TableView>
+
+        <Label fx:id="lblContador" layoutX="14.0" layoutY="671.0" text="Registros visibles: 0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="14.0" />
+
+    </children>
+
+</AnchorPane>
