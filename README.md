@@ -239,4 +239,3 @@ El repositorio debe tener al menos tres commits no vacíos de avances reales sob
 - [PostgreSQL: coincidencia de patrones e ILIKE](https://www.postgresql.org/docs/15/functions-matching.html).
 - [Oracle: manejo de SQLException](https://docs.oracle.com/javase/tutorial/jdbc/basics/sqlexception.html).
 - [Oracle: try-with-resources](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html).
-- **ChatGPT:** apoyo para organizar el proyecto y preparar código, validaciones, consultas y documentación. La configuración local, ejecución y resultados obtenidos deben comprobarse en el entorno de trabajo y registrarse en `pruebas.md`.
